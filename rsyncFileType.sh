@@ -4,8 +4,9 @@
 # Uses GNU parallel to run multiple copy operations at once
 tput bold
 [ $# -ne 4 ] && { echo -en "\nRsync all files in a tree of specific type in parallel\n------------------------------------------------------\n\n - Matthew Bashton 2018\n - This script copies all files from dest to source using rsync and GNU parallel\n\n Error Nothing to do, usage:\n rsynFileType.sh <source dir(will be recursed)> <destination: user@host:path/> <file type to copy (e.g. *.bam)> <number parallel threads to copy multiple files on> \n - Note: requires public key on remote host to work\n\n" ; exit 1; }
-set -o pipefail
 tput sgr0
+
+set -o pipefail
 
 tput bold
 echo -en "Rsync all files in a tree of specific type in parallel \n------------------------------------------------------\n\n - Matthew Bashton 2018\n\n"
